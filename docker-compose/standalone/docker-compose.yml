@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  simple-kafka-mqtt-connector:
+    image: arthurgrigo/simple-kafka-msb-connector:0.0.1-SNAPSHOT
+    restart: always
+    hostname: simple-kafka-msb-connector
+    container_name: simple-kafka-msb-connector
+    environment:
+      KAFKA_HOST: 172.21.5.239 #EDITME IP THROUGH WHICH THE KAFKA BROKER WILL BE REACHED
+      KAFKA_PORT: 9092
+      KAFKA_CLIENT_ID: simple-kafka-mqtt-connector-1
+      SUBSCRIBED_KAFKA_TOPICS: topicA;topicB;topicC #EDITME mqttTopicA>>>kafkaTopicA;mqttTopicB>>>kafkaTopicB;mqttTopicC>>>kafkaTopicC
+
